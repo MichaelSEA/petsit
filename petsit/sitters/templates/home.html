@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header_text %}Sitters{% endblock %}
+
+{% block table %}
+  <table id="id_list_table" class="container-fluid" >
+      <thead class="row">
+        <th></th>
+        <th class="col-xs-12">Sitter Name</th>
+        <th class="col-xs-12">Sitter Image</th>
+        <th class="col-xs-12">Average Rating</th>
+      </thead>
+      {% for sitter in sitters %}
+          <tr class="row">
+              <td class="col-xs-12">{{ sitter.name }}</td>
+              <td class="col-xs-12"><img src="{{ sitter.image }}" width="100" height="100" alt="{{ sitter.name }}"></td>
+              <td class="col-xs-12">{{ sitter.rating_avg }}</td>
+          </tr>
+      {% endfor %}
+  </table>
+{% endblock %}
