@@ -27,7 +27,7 @@ class Sitter(models.Model):
 class Stay(models.Model):
     rating = models.IntegerField(db_index=True, validators=[MinValueValidator(1), MaxValueValidator(5)])
     comments = models.TextField()
-    start_date = models.DateField()e
+    start_date = models.DateField()
     end_date = models.DateField()
     sitter = models.ForeignKey(Sitter)
     owner = models.ForeignKey(Owner)
